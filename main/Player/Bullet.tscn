@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c708pvdn34evi"]
+
+[ext_resource type="Texture2D" uid="uid://bqggwmw3wpe5v" path="res://icon.svg" id="1_ks7bq"]
+
+[sub_resource type="GDScript" id="GDScript_lcom0"]
+script/source = "extends CharacterBody2D
+
+var veloc = Vector2(0, 1)
+var speed = 500
+
+func _physics_process(delta):
+	var collision_info = move_and_collide(velocity.normalized() * delta * speed)
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjvuq"]
+radius = 114.0
+height = 272.0
+
+[node name="Bullet" type="CharacterBody2D"]
+script = SubResource("GDScript_lcom0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(398, 307)
+shape = SubResource("CapsuleShape2D_cjvuq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(401.5, 315.5)
+scale = Vector2(1.41406, 1.46094)
+texture = ExtResource("1_ks7bq")

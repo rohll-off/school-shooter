@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://byxmii81bns5n" path="res://Space/runAnimation(3).png" id="5_s5sou"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wujy7"]
-radius = 27.0
-height = 82.0
+radius = 24.0
+height = 64.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w5hvp"]
 animations = [{
@@ -41,3 +41,7 @@ position = Vector2(3, 4.76837e-07)
 scale = Vector2(2.42327, 2.18201)
 sprite_frames = SubResource("SpriteFrames_w5hvp")
 animation = &"Run"
+
+[node name="player_cam" type="Camera2D" parent="."]
+offset = Vector2(2.08165e-12, -78.59)
+zoom = Vector2(1.83, 1.83)
