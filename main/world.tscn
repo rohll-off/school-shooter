@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4ire2bggdyvi"]
+[gd_scene load_steps=5 format=3 uid="uid://c4ire2bggdyvi"]
 
 [ext_resource type="PackedScene" uid="uid://cic2re0an541p" path="res://Player/Player.tscn" id="1_farfy"]
+[ext_resource type="PackedScene" uid="uid://cvyatoysttsm7" path="res://bg.tscn" id="2_pwmeq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6w00m"]
 size = Vector2(837.5, 79.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkijo"]
-size = Vector2(1418.75, 1.4375)
+size = Vector2(1440, 191.438)
 
 [node name="World" type="Node2D"]
 
@@ -16,16 +17,40 @@ position = Vector2(694, 330)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(193, 182)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="l_wall_coll" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-174, -2)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_6w00m")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1184, 6)
+[node name="r_wall_coll" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1185, -2)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_6w00m")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(540.625, 419.281)
+[node name="floor_coll" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(506, 514.281)
 shape = SubResource("RectangleShape2D_lkijo")
+
+[node name="floor_pan" type="Panel" parent="."]
+offset_left = -22.0
+offset_top = 599.0
+offset_right = 1420.0
+offset_bottom = 794.0
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = -22.0
+offset_top = -240.0
+offset_right = 60.0
+offset_bottom = 794.0
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 1337.0
+offset_top = -241.0
+offset_right = 1419.0
+offset_bottom = 793.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Mountain-dusk" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("2_pwmeq")]

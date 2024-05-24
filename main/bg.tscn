@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvyatoysttsm7"]
+
+[ext_resource type="Texture2D" uid="uid://ddsj51g7i3v5y" path="res://Assets/Super Mountain Dusk Files/Previews/Mountain-Dusk.png" id="1_wb6og"]
+
+[node name="Mountain-dusk" type="Sprite2D"]
+position = Vector2(702.5, 278)
+scale = Vector2(3.99688, 2.66667)
+texture = ExtResource("1_wb6og")

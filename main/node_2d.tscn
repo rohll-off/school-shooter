@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://quit.gd" id="1_3m3wp"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Shoot" type="Node2D"]
 script = ExtResource("1_3m3wp")
 
 [node name="Play" type="Button" parent="."]
